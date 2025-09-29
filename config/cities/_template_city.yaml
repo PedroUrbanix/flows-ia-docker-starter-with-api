@@ -1,0 +1,16 @@
+municipio: "<<<Cidade>>>"
+uf: "<<<UF>>>"
+ibge_cod_municipio: "<<<IBGE7>>>"
+arcgis_zoneamento_layer: "<<<URL Layer Zoneamento (ArcGIS REST)>>>"
+siglon_divisao_territorial_shp: "<<<URL SHP Divisão Territorial/Bairros>>>"
+saude_portal_raizes:
+  - "<<<URL raiz Saúde (UBS/UPA)>>>"
+educacao_pdf_lista: "<<<URL lista escolas/CMEIs>>>"
+assistencia_pages:
+  cras: "<<<URL CRAS>>>"
+  creas: "<<<URL CREAS>>>"
+  centro_pop: "<<<URL Centro POP>>>"
+transporte_portal:
+  horarios: "<<<URL horários de ônibus>>>"
+  gtfs: "<<<URL GTFS se existir>>>"
+lei_sistema_viario_pdf: "<<<URL lei sistema viário>>>"

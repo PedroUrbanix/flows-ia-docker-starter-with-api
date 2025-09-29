@@ -1,0 +1,47 @@
+name: flows-gpu
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  # GPU (opcional para embeddings/modelos locais futuramente)
+  - pytorch
+  - pytorch-cuda=12.1
+  - torchvision
+  - torchaudio
+  # Geoespacial
+  - gdal
+  - geopandas
+  - shapely>=2.0
+  - pyproj
+  - fiona
+  - rtree
+  - libspatialindex
+  - h3-py
+  # Ciência de dados
+  - pandas
+  - numpy
+  - networkx
+  # Scraping / parsing
+  - httpx
+  - beautifulsoup4
+  - lxml
+  - pdfplumber
+  - pyyaml
+  - pydantic>=2
+  - tqdm
+  - orjson
+  - fastapi
+  - uvicorn
+  # OCR / PDF tooling
+  - tesseract
+  - pytesseract
+  - poppler
+  - ghostscript
+  # Dev
+  - black
+  - isort
+  - pip:
+      - typer[all]

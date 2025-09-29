@@ -1,0 +1,16 @@
+[project]
+name = "flows-ia"
+version = "0.1.0"
+description = "Pipeline IA para Fluxo de Pessoas (UrbaniX Group)"
+requires-python = ">=3.11"
+authors = [{name="UrbaniX Group"}]
+readme = "README.md"
+
+[project.scripts]
+flows-ia = "cli.__main__:app"
+
+[tool.black]
+line-length = 100
+
+[tool.isort]
+profile = "black"

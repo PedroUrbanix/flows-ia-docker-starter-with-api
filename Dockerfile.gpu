@@ -1,0 +1,25 @@
+# Dockerfile opcional para GPU
+FROM nvidia/cuda:12.1.1-cudnn9-runtime-ubuntu22.04
+
+ARG DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y --no-install-recommends     wget curl ca-certificates bzip2 git build-essential     python3 python3-pip python3-venv     tesseract-ocr ghostscript poppler-utils     && rm -rf /var/lib/apt/lists/*
+
+# micromamba
+RUN curl -L -o /usr/local/bin/micromamba https://micro.mamba.pm/api/micromamba/linux-64/latest     && chmod +x /usr/local/bin/micromamba
+
+COPY environment.gpu.yml /tmp/environment.gpu.yml
+RUN micromamba create -y -n flows -f /tmp/environment.gpu.yml && micromamba clean --all --yes
+ENV PATH=/opt/conda/envs/flows/bin:$PATH
+ENV PYTHONUNBUFFERED=1
+
+RUN useradd -m -u 1000 app && mkdir -p /app /app/outputs /app/data && chown -R app:app /app
+WORKDIR /app
+
+COPY pyproject.toml ./
+COPY src ./src
+COPY config ./config
+COPY scripts ./scripts
+RUN pip install -e .
+
+USER app
+CMD ["python", "-m", "cli", "--help"]

@@ -1,0 +1,21 @@
+municipio: "Londrina"
+uf: "PR"
+ibge_cod_municipio: "4113700"
+arcgis_zoneamento_layer: "https://geo.londrina.pr.gov.br/server/rest/services/abertos_zoneamento/Uso_e_Ocupa%C3%A7%C3%A3o_do_Solo_VIGENTE/MapServer/0"
+siglon_divisao_territorial_shp: "<<<preencher_link_download_oficial>>>"
+saude_portal_raizes:
+  - "https://saude.londrina.pr.gov.br/index.php/unidade-basica-saude/ubs-regiao-centro.html"
+  - "https://saude.londrina.pr.gov.br/index.php/unidade-basica-saude/ubs-regiao-norte.html"
+  - "https://saude.londrina.pr.gov.br/index.php/unidade-basica-saude/ubs-regiao-leste.html"
+  - "https://saude.londrina.pr.gov.br/index.php/unidade-basica-saude/ubs-regiao-oeste.html"
+  - "https://saude.londrina.pr.gov.br/index.php/unidade-basica-saude/ubs-regiao-sul.html"
+  - "https://saude.londrina.pr.gov.br/index.php/unidade-basica-saude/ubs-regiao-rural.html"
+educacao_pdf_lista: "<<<preencher_link_pdf_unidades_escolares>>>"
+assistencia_pages:
+  cras: "<<<preencher_url_oficial_cras>>>"
+  creas: "<<<preencher_url_oficial_creas>>>"
+  centro_pop: "<<<preencher_url_oficial_centro_pop>>>"
+transporte_portal:
+  horarios: "https://cmtu.londrina.pr.gov.br/index.php/transporte-urbano/249-horarios-e-itinerarios.html"
+  mov_app: "https://play.google.com/store/apps/details?id=br.bus.londrina"
+lei_sistema_viario_pdf: "<<<preencher_link_pdf_lei_13907_2024>>>"
