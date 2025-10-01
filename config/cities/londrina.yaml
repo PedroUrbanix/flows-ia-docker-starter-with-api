@@ -1,7 +1,7 @@
-municipio: "Londrina"
+﻿municipio: "Londrina"
 uf: "PR"
 ibge_cod_municipio: "4113700"
-arcgis_zoneamento_layer: "https://geo.londrina.pr.gov.br/server/rest/services/abertos_zoneamento/Uso_e_Ocupa%C3%A7%C3%A3o_do_Solo_VIGENTE/MapServer/0"
+arcgis_zoneamento_layer: "https://geo.londrina.pr.gov.br/server/rest/services/abertos_zoneamento/Uso_e_Ocupacao_do_Solo_VIGENTE/MapServer/0"
 siglon_divisao_territorial_shp: "<<<preencher_link_download_oficial>>>"
 saude_portal_raizes:
   - "https://saude.londrina.pr.gov.br/index.php/unidade-basica-saude/ubs-regiao-centro.html"

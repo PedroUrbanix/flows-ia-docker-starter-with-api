@@ -1,4 +1,4 @@
-[project]
+﻿[project]
 name = "flows-ia"
 version = "0.1.0"
 description = "Pipeline IA para Fluxo de Pessoas (UrbaniX Group)"
@@ -7,7 +7,7 @@ authors = [{name="UrbaniX Group"}]
 readme = "README.md"
 
 [project.scripts]
-flows-ia = "cli.__main__:app"
+flows-ia = "src.cli.__main__:main"
 
 [tool.black]
 line-length = 100

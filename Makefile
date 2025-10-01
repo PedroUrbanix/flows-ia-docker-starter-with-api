@@ -1,4 +1,6 @@
-SHELL := /bin/bash
+﻿SHELL := /bin/bash
+CITY ?= Londrina
+UF ?= PR
 
 .PHONY: build up down sh run lint format api
 
@@ -15,7 +17,7 @@ sh:
 	docker compose run --rm app bash
 
 run:
-	docker compose run --rm app python -m cli run --city "$(CITY)" --uf "$(UF)" --all
+	docker compose run --rm app python -m src.cli --city "$(CITY)" --state "$(UF)"
 
 api:
 	docker compose up -d api

@@ -1,6 +1,6 @@
-"""
+﻿"""
 Pipeline: saude pipeline
-Objetivo: implementar coleta/normalização/exportação para o tema.
-Notas: manter CRS EPSG:4326, registrar fonte/url/data/licença/hash.
+Objective: implement collection/normalisation/export steps for the theme.
+Notes: keep CRS EPSG:4326, record source/url/date/licence/hash.
 """
 from __future__ import annotations

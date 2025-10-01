@@ -1,4 +1,4 @@
-name: flows-gpu
+﻿name: flows-gpu
 channels:
   - pytorch
   - nvidia
@@ -6,12 +6,12 @@ channels:
 dependencies:
   - python=3.11
   - pip
-  # GPU (opcional para embeddings/modelos locais futuramente)
+  # GPU (optional for embeddings or local models)
   - pytorch
   - pytorch-cuda=12.1
   - torchvision
   - torchaudio
-  # Geoespacial
+  # Geospatial
   - gdal
   - geopandas
   - shapely>=2.0
@@ -20,7 +20,7 @@ dependencies:
   - rtree
   - libspatialindex
   - h3-py
-  # Ciência de dados
+  # Data science
   - pandas
   - numpy
   - networkx

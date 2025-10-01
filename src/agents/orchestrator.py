@@ -1,28 +1,32 @@
-from __future__ import annotations
-from common.utils import log
+﻿from __future__ import annotations
+
+from ..common.utils import log
+
 
 class Orchestrator:
     def __init__(self, tools):
         self.t = tools
 
     async def run_city(self, municipio: str, uf: str):
-        log(f"▶ DISCOVER {municipio}-{uf}")
+        log(f"[discover] {municipio}-{uf}")
         seeds = await self.t.search_agent(municipio, uf)
+
+        log("[classify] cataloguing sources")
         catalog = await self.t.classify_sources(seeds)
 
-        log("▶ INGEST")
+        log("[ingest] collecting raw datasets")
         raw = await self.t.ingest(catalog)
 
-        log("▶ NORMALIZE")
+        log("[normalize] harmonising schemas")
         norm = await self.t.normalize(raw)
 
-        log("▶ ENRICH (overlay)")
+        log("[enrich] overlaying reference layers")
         enr = await self.t.enrich(norm)
 
-        log("▶ EXPORT")
+        log("[export] writing artefacts")
         outputs = await self.t.export(enr, municipio)
 
-        log("▶ QA & REPORT")
+        log("[qa] running validation and metadata export")
         qa = await self.t.qa(outputs)
         await self.t.write_metadata(outputs, qa, municipio, uf)
         return outputs

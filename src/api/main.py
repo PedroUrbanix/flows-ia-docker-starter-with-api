@@ -1,9 +1,9 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 import asyncio
 from fastapi import FastAPI
 from pydantic import BaseModel
-from agents.orchestrator import Orchestrator
-from common.tools import Tools
+from ..agents.orchestrator import Orchestrator
+from ..common.tools import Tools
 
 app = FastAPI(title="flows-ia API", version="0.1.0")
 
