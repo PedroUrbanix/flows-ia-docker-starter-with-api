@@ -41,3 +41,22 @@ python -m cli discover --city "Londrina" --state "PR" --mode catalog,ai --output
 - **Catálogo** inclui raiz conhecida de Londrina (`https://geo.londrina.pr.gov.br/server/rest/services`).
 - **IA** tenta propor outras raízes; só entra o que **responder 200 e pjson válido**.
 - O download usa paginação `resultOffset` quando o layer indica `maxRecordCount`/`exceededTransferLimit`.
+
+
+## Prioridade Rural v2 (ICN + ISO + IAX)
+Calcula ranking de estradas rurais combinando:
+- **ICN**: distância de conexão, ponte de ligação, continuidade
+- **ISO**: proximidade e aderência a corredor/obra planejada
+- **IAX**: exposição/atendimento (POIs ponderados + população proxy)
+
+### Executar sem PYTHONPATH (recomendado)
+```bash
+python run_rural.py   --rural data/rural_roads.geojson   --paved data/urban_paved.geojson   --planned data/corredores_planejados.geojson   --pois data/pois.geojson   --poi-buffer-m 500   --poi-weights '{"CRITICAL":5,"COMMERCIAL":3,"OTHER":1}'   --pop-grid data/pop_grid.geojson   --pop-grid-pop-field pop   --outdir out/rural
+```
+
+### Alternativa (com PYTHONPATH)
+```bash
+PYTHONPATH=src python -m cli_rural   --rural data/rural_roads.geojson   --paved data/urban_paved.geojson   --planned data/corredores_planejados.geojson   --pois data/pois.geojson   --poi-buffer-m 500   --poi-weights '{"CRITICAL":5,"COMMERCIAL":3,"OTHER":1}'   --pop-grid data/pop_grid.geojson   --pop-grid-pop-field pop   --outdir out/rural
+```
+
+Saídas: `out/rural/rural_priority.geojson` e `out/rural/rural_priority.csv`
